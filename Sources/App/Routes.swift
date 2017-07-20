@@ -45,7 +45,7 @@ extension Droplet {
             return try JSON(node: nodeDictionary)
         }
         
-        post("delete", String.parameter) { req in
+        delete("deleteCar", String.parameter) { req in
             
             let carId = try req.parameters.next(String.self)
             guard let car = try Car.find(carId) else {
